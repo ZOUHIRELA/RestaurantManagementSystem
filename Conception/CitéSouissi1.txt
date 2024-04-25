@@ -1,0 +1,436 @@
+                                  ****Menu Principale*****
+
+
+1 ** Gestion des Menus :
+
+
+Nous permettrons à notre chef de restaurant de gérer facilement les menus quotidiens en prenant en compte les précieux commentaires de notre équipe d'étudiants ainsi que les prévisions de réservations. Cela garantira que nos plats correspondent aux attentes et aux demandes de nos clients.
+
+
+2 ** Gestion des Réservations :
+
+
+Notre équipe d'administration pourra saisir manuellement le nombre de tickets réservés pour chaque jour. Cette fonctionnalité essentielle nous permettra de planifier et de prévoir avec précision nos activités quotidiennes en fonction de la demande anticipée.
+
+
+3 ** Service de Comptabilité :
+
+
+Nous automatiserons le calcul des quantités nécessaires, des coûts des matières premières et des rapports financiers. Cela nous permettra de gérer nos ressources de manière efficiente, en optimisant nos coûts et en garantissant une rentabilité optimale.
+
+
+4 ** Interface Utilisateur Conviviale :
+
+
+Nous concevrons une interface utilisateur intuitive et facile à utiliser pour tous nos utilisateurs, de l'administration au personnel du restaurant. Cela garantira une expérience fluide et agréable lors de l'utilisation de notre application, ce qui est essentiel pour une adoption réussie par notre équipe.
+
+
+5 ** Gestion des Stocks :
+
+
+Nous suivrons de près les niveaux de stock de nos différents produits, en générant des alertes lorsque les niveaux sont bas. De plus, nous permettrons à notre équipe de passer des commandes fournisseurs directement depuis l'application pour maintenir nos stocks à des niveaux optimaux.
+
+
+6 ** Gestion des Employés :
+
+
+Nous garderons une trace précise des horaires des employés, de leurs tâches assignées et de leurs informations personnelles. De plus, nous intégrerons des fonctionnalités de gestion des salaires si nécessaire pour assurer une gestion efficace de notre personnel.
+
+
+7 ** Système de Notation et de Commentaires :
+
+
+Nous offrirons aux étudiants la possibilité de laisser des avis et des commentaires sur nos plats et services. Cela nous aidera à identifier nos points forts et nos axes d'amélioration, contribuant ainsi à améliorer l'expérience globale de notre restaurant.
+
+
+8 ** Menus Personnalisés :
+
+
+Nous permettrons à nos clients de créer des menus personnalisés en combinant différents plats et en ajoutant des options de personnalisation. Cela permettra à nos clients de satisfaire pleinement leurs préférences et leurs goûts uniques.
+
+
+9 ** Suivi des Commentaires Clients :
+Nous intégrerons un système pour suivre et analyser les commentaires des clients, en mettant en évidence les commentaires positifs et en identifiant les domaines à améliorer. Notre responsable pourra utiliser ces informations pour apporter des changements positifs et accroître la satisfaction de nos clients.
+
+
+10 ** Tableau de Bord de Gestion :
+
+
+Nous créerons un tableau de bord personnalisé pour notre responsable, lui permettant de visualiser rapidement les tendances, les performances de l'équipe, les problèmes signalés et d'autres métriques importantes. Cela l'aidera à prendre des décisions informées et à optimiser nos opérations.
+
+
+11 ** Gestion des Problèmes :
+
+
+Nous intégrerons un système de gestion des problèmes pour que notre équipe puisse signaler rapidement tout problème, tel que des retards dans le service ou des erreurs dans les commandes. Notre responsable pourra prendre les mesures nécessaires pour résoudre efficacement ces problèmes.
+
+
+12 ** Espace de Communication :
+
+
+Nous créerons un espace de communication au sein de l'application où notre équipe pourra discuter, partager des idées, proposer des améliorations et collaborer sur des projets spécifiques. Cela favorisera un environnement de travail collaboratif et stimulera l'innovation au sein de notre équipe.
+En résumé, ces axes principaux représentent les éléments clés de notre application qui contribueront à une gestion efficace et à une expérience client optimale pour notre restaurant à la Cité Souissi 1 à Rabat.
+
+
+                                       *****Agilité*****
+
+
+
+1 ** Méthodologie Agile :
+
+
+Nous diviserons notre projet en itérations courtes, appelées sprints, où nous nous concentrerons sur la livraison de fonctionnalités à chaque étape. Cela nous permettra d'itérer rapidement et de répondre aux besoins changeants de notre équipe et de nos utilisateurs.
+Nous impliquerons activement nos parties prenantes tout au long du processus de développement. Leurs retours réguliers nous aideront à ajuster nos priorités et à garantir que nous développons les fonctionnalités les plus pertinentes et utiles pour notre restaurant.
+Nous utiliserons des outils de gestion de projet agiles tels que Kanban ou Scrum pour organiser nos tâches, suivre la progression du projet et assurer une collaboration efficace au sein de notre équipe.
+
+
+2 ** Architecture de l'Application :
+
+
+Nous choisirons une architecture appropriée pour notre application JavaFX, en tenant compte de la complexité de nos fonctionnalités et de la scalabilité future. L'architecture MVC (Modèle-Vue-Contrôleur) sera notre choix pour séparer clairement la logique métier, l'interface utilisateur et la gestion des données.
+Nous utiliserons des frameworks JavaFX bien établis pour faciliter le développement et maintenir une structure modulaire et réutilisable. Cela nous permettra de développer notre application de manière efficace tout en garantissant une maintenabilité à long terme.
+
+
+3 ** Conception UX/UI :
+
+
+Avant de commencer le développement, nous réaliserons des wireframes et des maquettes pour concevoir une interface utilisateur efficace et conviviale. Cela nous aidera à visualiser et à planifier l'expérience utilisateur dès le début du projet.
+Nous nous assurerons que notre interface utilisateur est intuitive et répond aux besoins des différents utilisateurs, y compris l'administration, le personnel du restaurant et les étudiants. Nous suivrons les principes de conception UX pour garantir une expérience utilisateur optimale.
+
+
+4 ** Planification et Gestion de Projet :
+
+
+Nous établirons un plan de projet détaillé avec des objectifs clairs, des jalons et des délais pour chaque phase du développement. Cela nous permettra de rester sur la bonne voie et d'atteindre nos objectifs dans les délais impartis.
+Nous utiliserons des outils de gestion de projet pour suivre les tâches, attribuer des ressources et gérer les dépendances. Nous prévoyons également des tests réguliers tout au long du processus de développement pour garantir la qualité et la fiabilité de notre application.
+
+
+5 ** Sécurité et Confidentialité :
+
+
+Nous intégrerons des mesures de sécurité robustes pour protéger les données sensibles telles que les informations financières des clients et les données personnelles des employés. La sécurité et la confidentialité des données seront nos priorités absolues pour garantir la confiance de nos utilisateurs.
+Nous nous conformerons aux réglementations en matière de confidentialité des données et aux normes de sécurité pour assurer la conformité et la protection des informations sensibles.
+
+
+
+                                 *****Méthodologie Agile******
+
+
+
+Méthodologie Agile pour notre Projet JavaFX :
+
+Itérations Courtes (Sprints) :
+Nous allons diviser notre projet en itérations courtes, appelées sprints, où chaque sprint se concentrera sur la livraison de fonctionnalités spécifiques. Cela nous permettra d'itérer rapidement et de répondre aux besoins changeants de notre équipe et de nos utilisateurs à la Cité Souissi 1 à Rabat.
+
+Réactivité aux Besoins Changeants :
+L'approche agile nous permettra d'être réactifs aux besoins changeants. Nous ajusterons nos priorités en fonction des retours réguliers de nos parties prenantes, garantissant ainsi que nous développons les fonctionnalités les plus pertinentes et utiles pour notre restaurant universitaire.
+
+Implication Active des Parties Prenantes :
+Nous impliquerons activement nos parties prenantes tout au long du processus de développement. Leurs retours et leurs contributions seront précieux pour façonner notre application selon les besoins réels du restaurant et des étudiants.
+
+Utilisation d'Outils de Gestion Agile :
+Pour organiser nos tâches et suivre la progression du projet, nous utiliserons des outils de gestion de projet agiles tels que Kanban ou Scrum. Ces outils faciliteront une collaboration efficace au sein de notre équipe en fournissant une visibilité claire sur les tâches à accomplir et leur état d'avancement.
+
+---------------------->Sprints
+
+Sprint 1 : Planification et Conception Initiale
+
+Définition des objectifs du projet et des fonctionnalités de base.
+Création des wireframes et des maquettes pour concevoir l'interface utilisateur.
+Choix de l'architecture MVC et des frameworks JavaFX à utiliser.
+
+Sprint 2 : Gestion des Menus
+
+Implémentation de la fonctionnalité permettant au chef de gérer les menus quotidiens.
+Intégration des commentaires de l'équipe d'étudiants pour ajuster les menus.
+
+Sprint 3 : Gestion des Réservations
+
+Mise en place de la fonctionnalité permettant à l'administration d'entrer manuellement le nombre de tickets réservés pour chaque jour.
+Intégration de la prévision des réservations pour optimiser la gestion des repas.
+
+Sprint 4 : Service de Comptabilité
+
+Automatisation du calcul des quantités nécessaires et des coûts des matières premières.
+Génération de rapports financiers en fonction des réservations et des menus prévus.
+
+Sprint 5 : Interface Utilisateur Conviviale
+
+Développement de l'interface intuitive et facile à utiliser pour tous les utilisateurs.
+Intégration des retours et des suggestions des parties prenantes pour améliorer l'expérience utilisateur.
+
+Sprint 6 : Gestion des Stocks
+
+Mise en place du suivi des niveaux de stock des différents produits du restaurant.
+Génération d'alertes en cas de niveaux de stock bas et possibilité de passer des commandes fournisseurs directement depuis l'application.
+
+Sprint 7 : Gestion des Employés
+
+Suivi des horaires, des tâches assignées et des informations personnelles des employés.
+Intégration des fonctionnalités de gestion des salaires si nécessaire.
+
+Sprint 8 : Système de Notation et de Commentaires
+
+Permettre aux étudiants de laisser des avis et des commentaires sur les plats et le service.
+Intégrer les commentaires dans le processus d'amélioration continue du restaurant.
+
+Sprint 9 : Menus Personnalisés
+
+Offrir aux étudiants la possibilité de créer des menus personnalisés.
+Ajout d'options de personnalisation pour répondre aux préférences des clients.
+
+Sprint 10 : Suivi des Commentaires Clients
+
+Intégrer un système pour suivre et analyser les commentaires des clients.
+Utiliser ces informations pour apporter des changements positifs et améliorer l'expérience globale du restaurant.
+
+Sprint 11 : Tableau de Bord de Gestion
+
+Création d'un tableau de bord personnalisé pour la responsable.
+Visualisation des tendances, des performances de l'équipe et des métriques importantes pour prendre des décisions informées.
+
+Sprint 12 : Gestion des Problèmes
+
+Intégrer un système de gestion des problèmes pour résoudre rapidement les problèmes signalés.
+Amélioration continue en prenant en compte les retours des utilisateurs.
+
+Sprint 13 : Espace de Communication
+
+Création d'un espace de communication pour faciliter la collaboration au sein de l'équipe.
+Partage d'idées, de propositions d'amélioration et de projets spécifiques.
+En adoptant cette approche par sprints, nous pourrons livrer des fonctionnalités de manière itérative, en nous concentrant sur des objectifs spécifiques à chaque étape et en répondant aux besoins changeants de notre équipe et de nos utilisateurs.
+
+
+
+                               ****Architecture du Projet******
+
+
+
+1 ** Compréhension de l'Architecture MVC :
+
+
+Modèle (Model) : Nous allons définir rigoureusement le modèle de notre application, qui représente la logique métier et les données essentielles telles que la gestion des menus, des réservations, des stocks et des employés. Cette partie sera le cœur de notre système, garantissant une gestion efficace et précise de nos opérations quotidiennes.
+Vue (View) : Nous allons concevoir des interfaces utilisateur attrayantes et intuitives en utilisant JavaFX pour créer différentes fenêtres, contrôles et formulaires. Les utilisateurs interagiront avec cette partie de l'application, donc son ergonomie et son accessibilité sont primordiales pour une expérience utilisateur optimale.
+Contrôleur (Controller) : Les contrôleurs joueront un rôle crucial en tant que médiateurs entre le modèle et la vue. Ils seront responsables de gérer les événements et les actions de l'utilisateur, en récupérant les données du modèle, en les traitant et en les affichant dans la vue appropriée. Cela garantira une communication fluide et efficace entre les différentes parties de notre application.
+
+
+2 ** Création des Packages et des Classes :
+
+
+Modèle : Nous allons organiser notre modèle en créant un package dédié pour chaque entité métier essentielle comme les menus, les réservations, les employés, etc. Chaque classe Java à l'intérieur de ces packages représentera une entité métier spécifique avec ses attributs et ses méthodes associées.
+Vue : Nous allons structurer notre vue en créant un package pour les interfaces utilisateur JavaFX. À l'intérieur de ce package, nous aurons des classes dédiées pour chaque fenêtre, formulaire ou composant d'interface utilisateur nécessaire pour notre application de gestion de restaurant.
+Contrôleur : Nous allons également créer un package pour les contrôleurs de notre application. Ces classes Java agiront comme des contrôleurs pour chaque vue, gérant les événements et les interactions utilisateur de manière efficace et organisée.
+
+
+3 ** Liaisons entre les Composants :
+
+
+Dans chaque contrôleur, nous allons implémenter des méthodes spécifiques pour gérer les actions de l'utilisateur telles que la création d'un nouveau menu, la réservation de tickets, etc. Ces méthodes seront essentielles pour assurer le bon fonctionnement de notre application et répondre aux besoins de nos utilisateurs.
+Dans le modèle, nous allons définir des méthodes pour accéder aux données, les modifier et les supprimer selon les besoins. Ces opérations garantiront une gestion efficace des informations cruciales pour notre restaurant.
+Dans la vue, nous utiliserons des événements JavaFX pour lier les actions de l'utilisateur aux méthodes correspondantes dans les contrôleurs. Cela assurera une interaction transparente entre l'interface utilisateur et la logique métier de notre application.
+
+
+4 ** Utilisation des Frameworks JavaFX :
+
+
+Nous profiterons des frameworks JavaFX bien établis tels que JavaFX Scene Builder pour faciliter la conception de notre interface utilisateur. Cela nous permettra de créer des interfaces attrayantes et fonctionnelles de manière efficace.
+Nous utiliserons également des outils et des bibliothèques comme JFoenix pour des composants graphiques améliorés, garantissant ainsi une expérience utilisateur de haute qualité.
+Pour la gestion des données et la persistance, nous utiliserons JPA (Java Persistence API) pour interagir avec notre base de données, assurant ainsi une intégration fluide avec la logique métier de notre application.
+
+
+5 ** Intégration avec la Logique Métier et la Gestion des Données :
+
+
+Nous veillerons à ce que la logique métier (Modèle) soit distincte de l'interface utilisateur (Vue et Contrôleur), garantissant ainsi une séparation claire des responsabilités et une meilleure maintenabilité de notre code.
+Nous utiliserons des patrons de conception tels que Singleton pour le modèle si nécessaire, garantissant ainsi une seule instance de la classe modèle accessible à tous les contrôleurs. Cela contribuera à une gestion efficace de nos données et à une réduction des problèmes de synchronisation.
+En suivant ces étapes avec rigueur et en utilisant les outils et les pratiques recommandés, nous créerons une architecture MVC robuste et efficace pour notre application de gestion de restaurant, assurant ainsi une expérience utilisateur de qualité et une gestion optimale de nos opérations quotidiennes.
+
+
+
+                                  ****Conception ui / ux *****
+
+
+
+
+Conception UX/UI pour notre Projet JavaFX :
+
+1. Wireframes et Maquettes :
+
+Avant de plonger dans le développement, nous allons créer des schémas (wireframes) et des maquettes pour planifier méticuleusement l'apparence et le fonctionnement de notre application. Cela nous aidera à visualiser l'expérience utilisateur dès le début et à obtenir des retours précieux des parties prenantes.
+
+2. Interface Utilisateur Intuitive :
+
+Notre objectif est de concevoir une interface qui soit naturelle et agréable à utiliser pour tous nos utilisateurs, qu'il s'agisse de l'administration, du personnel du restaurant ou des étudiants. Chaque élément de l'interface sera soigneusement pensé pour garantir une expérience fluide et efficace.
+
+3. Répondre aux Besoins des Utilisateurs :
+
+Nous allons adapter notre interface pour répondre aux besoins spécifiques de chaque utilisateur. Cela signifie que chaque fonctionnalité sera conçue pour offrir une expérience personnalisée et pertinente à chaque catégorie d'utilisateur.
+
+4. Principes de Conception UX :
+
+Nous suivrons des principes de conception reconnus pour assurer une expérience utilisateur optimale. Cela inclut la simplicité, la cohérence, l'accessibilité et la réactivité de notre interface pour garantir sa facilité d'utilisation et son attrait visuel.
+
+5. Tests Utilisateurs :
+
+Nous organiserons des sessions de tests avec de vrais utilisateurs à différentes étapes du développement. Leurs retours directs nous guideront dans l'amélioration continue de l'interface pour nous assurer qu'elle répond parfaitement aux attentes et aux besoins de nos utilisateurs finaux.
+
+6. Adaptabilité aux Différents Écrans :
+
+Notre interface sera conçue pour s'adapter harmonieusement à différents types d'appareils, du plus grand au plus petit écran. Cela garantira une expérience utilisateur cohérente et agréable, quelle que soit la plateforme utilisée.
+
+7. Guides Visuels et Feedback Visuel :
+
+Nous intégrerons des guides visuels intuitifs et un feedback visuel clair pour guider nos utilisateurs tout au long de leur parcours dans l'application. Ces éléments visuels faciliteront l'utilisation de l'interface et rendront l'expérience globale plus agréable et efficace.
+
+En combinant ces étapes de conception UX/UI avec notre approche agile et nos principes de gestion de projet, nous sommes confiants que nous créerons une interface utilisateur exceptionnelle pour notre application de gestion de restaurant à la Cité Souissi 1 à Rabat.
+
+
+                          ****Planification et Gestion de Projet*****
+
+
+Établissement d'un Plan Détaillé :
+
+Nous allons élaborer un plan de projet complet et bien défini, avec des objectifs clairs et des étapes clés à atteindre à chaque phase. Chaque jalon sera minutieusement défini pour que toute l'équipe comprenne clairement ce qui doit être accompli à chaque étape du projet. Cela nous permettra de maintenir le cap et de respecter les échéances fixées.
+
+Utilisation d'Outils de Gestion de Projet :
+
+Nous mettrons en place des outils de gestion de projet avancés pour suivre et organiser efficacement notre travail. Ces outils nous permettront de gérer les tâches, de répartir les ressources de manière optimale et de gérer les dépendances entre les différentes parties du projet. En utilisant ces outils, nous nous assurerons que chaque membre de l'équipe est informé de ses responsabilités et que nous travaillons tous en harmonie vers nos objectifs communs.
+
+Tests Réguliers pour la Qualité et la Fiabilité :
+
+Nous accorderons une grande importance aux tests tout au long du processus de développement. Des tests réguliers seront effectués pour évaluer la qualité et la fiabilité de notre application. Cela inclura des tests fonctionnels approfondis pour vérifier que chaque fonctionnalité répond à nos normes de qualité, des tests d'intégration pour assurer la cohérence de l'ensemble de l'application et des tests de performance pour garantir sa réactivité et sa stabilité. En effectuant ces tests de manière systématique, nous nous assurerons que notre application est prête pour une utilisation réelle et qu'elle offre une expérience optimale à nos utilisateurs.
+
+Suivi et Communication Réguliers :
+
+Nous mettrons en place un système de suivi et de communication réguliers au sein de l'équipe. Des réunions périodiques seront organisées pour discuter des progrès, résoudre les problèmes éventuels et prendre des décisions stratégiques en temps opportun. Une communication ouverte et transparente sera encouragée pour garantir que toutes les parties prenantes restent informées et impliquées dans le processus de développement.
+
+En combinant une planification rigoureuse, l'utilisation d'outils avancés, des tests approfondis et une communication efficace, nous sommes confiants dans notre capacité à livrer un produit final de haute qualité qui répondra aux attentes de notre équipe et des utilisateurs finaux de la Cité Souissi 1 à Rabat.
+
+
+
+
+
+                                       ****WorkFlow*****
+
+
+
+
+enchaînement détaillé des actions et des interfaces pour chaque utilisateur lorsqu'il clique sur les différents boutons :
+
+Interface du Chef de Restaurant :
+
+Clique sur le Bouton "Chef de Restaurant" :
+Affiche l'interface du Chef de Restaurant.
+Présente les fonctionnalités suivantes :
+Gestion des Menus et Repas.
+Communication avec le Responsable des Étudiants.
+Gestion des Stocks et Comptabilité.
+Gestion des Employés.
+Actions dans l'Interface du Chef de Restaurant :
+Gestion des Menus et Repas :
+Clique sur "Modifier" pour ajuster les ingrédients des repas.
+Communication avec le Responsable des Étudiants :
+Envoie un message au responsable pour discuter des retours des étudiants.
+Gestion des Stocks et Comptabilité :
+Consulte le stock actuel des ingrédients.
+Accède aux rapports financiers basés sur les réservations et les menus.
+Gestion des Employés :
+Ajoute, modifie ou supprime les profils des employés.
+
+
+Interface du Responsable des Étudiants :
+
+Clique sur le Bouton "Responsable des Étudiants" :
+Affiche l'interface du Responsable des Étudiants.
+Présente les fonctionnalités suivantes :
+Gestion des Avis et Commentaires.
+Communication avec le Chef de Restaurant.
+Affichage du Menu du Jour.
+Actions dans l'Interface du Responsable des Étudiants :
+Gestion des Avis et Commentaires :
+Laisse des avis sur les plats et les services.
+Signale des problèmes pour une action rapide du chef.
+Communication avec le Chef de Restaurant :
+Envoie un message au chef pour transmettre les retours des étudiants.
+Affichage du Menu du Jour :
+Vérifie le menu quotidien et les mises à jour.
+
+
+Interface de l'Étudiant dans l'Équipe des Étudiants :
+
+Clique sur le Bouton "Étudiant dans l'Équipe des Étudiants" :
+Affiche l'interface de l'Étudiant dans l'Équipe des Étudiants.
+Présente les fonctionnalités suivantes :
+Échange d'Avis et Commentaires.
+Affichage du Menu du Jour.
+Actions dans l'Interface de l'Étudiant dans l'Équipe des Étudiants :
+Échange d'Avis et Commentaires :
+Partage des avis et commentaires sur les plats et les services.
+Collabore avec d'autres étudiants pour améliorer les plats.
+Affichage du Menu du Jour :
+Vérifie le menu quotidien et les mises à jour.
+
+
+Interface de l'Employé du Restaurant :
+
+Clique sur le Bouton "Employé du Restaurant" :
+Affiche l'interface de l'Employé du Restaurant.
+Présente les fonctionnalités suivantes :
+Visualisation des Produits.
+Gestion des Alertes de Stock.
+Actions dans l'Interface de l'Employé du Restaurant :
+Visualisation des Produits :
+Consulte les produits existants sans modification directe.
+Gestion des Alertes de Stock :
+Reçoit des alertes lorsque les niveaux de stock sont critiques.
+Signale des commandes fournisseurs si nécessaire.
+
+
+
+
+
+
+                               ****Dictionnaire de données****
+
+
+
+Utilisateurs
+
+ID_utilisateur : Clé primaire (int)
+Nom : Varchar
+Prénom : Varchar
+Type_utilisateur : Varchar (Chef de Restaurant, Responsable des Étudiants, Étudiant, Employé)
+Email : Varchar
+Mot_de_passe : Varchar
+Statut : Varchar (Activé, Désactivé)
+Menus
+
+ID_menu : Clé primaire (int)
+Jour : Varchar (Lundi, Mardi, ...)
+Type_repas : Varchar (Déjeuner, Dîner)
+Plat_principal : Varchar
+Entrée : Varchar
+Dessert : Varchar
+Description_repas : Text
+Prix : Decimal (1.4 MAD)
+Disponible : Varchar (Oui, Non)
+Stocks
+
+ID_produit : Clé primaire (int)
+Nom_produit : Varchar
+Quantite_disponible : Int
+Quantite_minimale_alerte : Int
+Avis
+
+ID_avis : Clé primaire (int)
+ID_utilisateur : Clé étrangère vers Utilisateurs
+Date : Date
+Contenu : Text
+Employes
+
+ID_employe : Clé primaire (int)
+Nom : Varchar
+Prénom : Varchar
+Poste : Varchar
+Salaire : Decimal
+Date_embauche : Date
