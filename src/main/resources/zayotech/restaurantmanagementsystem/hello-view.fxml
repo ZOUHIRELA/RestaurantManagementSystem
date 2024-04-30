@@ -1,16 +1,885 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="zayotech.restaurantmanagementsystem.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zayotech.restaurantmanagementsystem.HelloController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <AnchorPane fx:id="main_side" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: black;" styleClass="root">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="291.0" layoutY="20.0" text="Application de Gestion de Restaurant Universitaire" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="47.0" fitWidth="52.0" layoutX="8.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@../../Images/esi_logo.jpeg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="71.0" layoutX="914.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@../../Images/onousc_logo.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="72.0" layoutY="26.0" text="ESI RABAT" textFill="ORANGE" />
+                        <Label layoutX="856.0" layoutY="26.0" text="ONOUSC" textFill="ORANGE" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="chef_restaurant_bar" layoutY="60.0" prefHeight="540.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="750.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="40.0" layoutY="14.0" text="Chef de Restaurant" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="chef_menuBtn" layoutX="59.0" layoutY="77.0" mnemonicParsing="false" onAction="#getMenuRepas" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Menu et Repas" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="chef_employeeBtn" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" onAction="#getMenuRepas" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Gestion des employés" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="chef_comptabilitéBtn" layoutX="14.0" layoutY="179.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Gestion de Comptabilité" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="chef_communicationBtn" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication avec le Responsable" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="chef_employee_side" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+                     <children>
+                        <Label layoutX="278.0" layoutY="14.0" text="Gestion des Employés" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="63.0" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Nom" textFill="ORANGE" AnchorPane.leftAnchor="11.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="152.0" layoutY="63.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Prénom" textFill="ORANGE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="302.0" layoutY="63.0" prefHeight="40.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Poste" textFill="ORANGE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="462.0" layoutY="63.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Salaire" textFill="ORANGE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="591.0" layoutY="63.0" prefHeight="40.0" prefWidth="145.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Date d'Embauche" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="chef_employee_nom" layoutX="12.0" layoutY="103.0" prefHeight="379.0" prefWidth="139.0" style="-fx-border-color: orange;" wrapText="true" AnchorPane.leftAnchor="11.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="chef_employee_prenom" layoutX="152.0" layoutY="103.0" prefHeight="379.0" prefWidth="149.0" style="-fx-border-color: orange;" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="chef_employee_poste" layoutX="302.0" layoutY="103.0" prefHeight="379.0" prefWidth="159.0" style="-fx-border-color: orange;" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="chef_employee_salaire" layoutX="462.0" layoutY="103.0" prefHeight="379.0" prefWidth="132.0" style="-fx-border-color: orange;" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="chef_employee_dateEmbauche" layoutX="591.0" layoutY="103.0" prefHeight="379.0" prefWidth="145.0" style="-fx-border-color: orange;" wrapText="true" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </TextArea>
+                        <Button fx:id="chef_employee_modifier" layoutX="272.0" layoutY="491.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-color: orange;" text="Modifier" textFill="ORANGE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="chef_employee_supprimer" layoutX="372.0" layoutY="491.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-color: orange;" text="Supprimer" textFill="ORANGE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="chefMenu_side" layoutX="250.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                      <AnchorPane fx:id="chef_menu_side" minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="749.0">
+                           <children>
+                              <Label layoutX="309.0" layoutY="14.0" text="Menu Complet" textFill="ORANGE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane fx:id="chef_menu" layoutX="14.0" layoutY="44.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+                                 <children>
+                                    <Button fx:id="chef_lundiBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Lundi" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="chef_mardiBtn" layoutX="111.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mardi" textFill="ORANGE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="chef_mercrediBtn" layoutX="211.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mercredi" textFill="ORANGE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="chef_jeudiBtn" layoutX="311.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Jeudi" textFill="ORANGE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="chef_vendrediBtn" layoutX="411.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Vendredi" textFill="ORANGE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="chef_samediBtn" layoutX="511.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Samedi" textFill="ORANGE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="chef_dimancheBtn" layoutX="611.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Dimanche" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <AnchorPane fx:id="chef_DimancheMenu" layoutX="11.0" layoutY="71.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+                                       <children>
+                                          <Label fx:id="chef_déjeuner" layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="chef_diner" layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerDimanche" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="dimanche_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="dimanche_diner_description" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="dimanche_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="dimanche_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierDimanche" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="chef_samediMenu" layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+                                       <children>
+                                          <Label fx:id="chef_déjeuner1" layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="chef_diner1" layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerSamedi" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="samedi_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="samedi_diner_description" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="samedi_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="samedi_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierSamedi" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="chef_vendrediMenu" layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+                                       <children>
+                                          <Label fx:id="chef_déjeuner11" layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="chef_diner11" layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerVendredi" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="vendredi_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="vendredi_diner_description" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="vendredi_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="vendredi_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierVendredi" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="chef_jeudiMenu" layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="81.0">
+                                       <children>
+                                          <Label fx:id="chef_déjeuner111" layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="chef_diner111" layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerJeudi" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="jeudi_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="jeudi_diner_description" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="jeudi_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="jeudi_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierJeudi" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="chef_mercrediMenu" layoutX="21.0" layoutY="92.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+                                       <children>
+                                          <Label fx:id="chef_déjeuner1111" layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="chef_diner1111" layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerMercredi" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="mercredi_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mercredi_diner_description" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="mercredi_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="mercredi_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierMercredi" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="chef_mardiMenu" layoutX="31.0" layoutY="102.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="81.0">
+                                       <children>
+                                          <Label fx:id="chef_déjeuner11111" layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="chef_diner11111" layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerMardi" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="mardi_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="mardi_diner_description" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="mardi_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="mardi_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierMardi" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="chef_lundiMenu" layoutX="41.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="81.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Déjeuner" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="11.0" layoutY="171.0" prefHeight="160.0" prefWidth="80.0" style="-fx-background-color: black; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Diner" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="chef_validerlundi" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#valideteMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Valider" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="97.0" layoutY="12.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Plat Principal" textAlignment="CENTER" textFill="ORANGE" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="11.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="229.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Entrées" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="379.0" layoutY="11.0" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Dessert" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="511.0" layoutY="11.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Description" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="661.0" layoutY="11.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="D" textAlignment="CENTER" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="lundi_dejeuner_platPrincipal" editable="false" layoutX="97.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_diner_platPrincipal" editable="false" layoutX="97.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_dejeuner_entrees" editable="false" layoutX="229.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_dejeuner_dessert" editable="false" layoutX="379.0" layoutY="51.0" prefHeight="121.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_dejeuner_description" editable="false" layoutX="511.0" layoutY="51.0" prefHeight="121.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_diner_entrees" editable="false" layoutX="229.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_diner_dessert" editable="false" layoutX="379.0" layoutY="172.0" prefHeight="160.0" prefWidth="132.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <TextArea fx:id="lundi_diner_diescription" editable="false" layoutX="511.0" layoutY="172.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" wrapText="true" />
+                                          <CheckBox fx:id="lundi_dejeuner_disponnible" disable="true" layoutX="660.0" layoutY="93.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="lundi_diner_disponnible" disable="true" layoutX="660.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-border-radius: 8px; -fx-background-radius: 8px;" textFill="ORANGE">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button fx:id="chef_modifierLundi" layoutX="266.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifyMenu" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-color: orange;" text="Modifier" textAlignment="CENTER" textFill="ORANGE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="service_side" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="142.0" layoutY="14.0" text="Notre Service !" textFill="ORANGE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="270.0" fitWidth="390.0" layoutX="5.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="229.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="41.0">
+                           <image>
+                              <Image url="@../../Images/main_restaurant_photo.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Text fill="ORANGE" fontSmoothingType="LCD" layoutX="21.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L'application de gestion de restaurant universitaire est un système conçu pour faciliter la gestion quotidienne des activités dans un restaurant universitaire. Elle permet aux différents acteurs, tels que le chef de restaurant, le responsable des étudiants, les étudiants de l'équipe, et les employés du restaurant, d'interagir de manière efficace et organisée pour assurer un fonctionnement fluide et optimal du restaurant." textAlignment="CENTER" wrappingWidth="357.13671875">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="-2.0" layoutY="490.0" prefHeight="50.0" prefWidth="402.0" style="-fx-background-color: black; -fx-background-radius: 5px; -fx-border-color: white; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="490.0">
+                           <children>
+                              <Label layoutX="67.0" layoutY="13.0" text="\@ 2024 ZayoTech. Tous droits réservés." textFill="ORANGE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="changePassword_side" layoutX="400.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="144.0" layoutY="32.0" text="Interface Pour Changer le Mot de Passe" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="162.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #e0ebeb;" text="Nouveau Mot de Passe" textFill="ORANGE" AnchorPane.leftAnchor="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="220.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #e0ebeb;" text="Confirmer" textFill="ORANGE" AnchorPane.leftAnchor="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="new_password" layoutX="302.0" layoutY="162.0" prefHeight="40.0" AnchorPane.leftAnchor="302.0" />
+                        <PasswordField fx:id="confirmeNewPassword" layoutX="301.0" layoutY="220.0" prefHeight="40.0" AnchorPane.leftAnchor="301.0" AnchorPane.rightAnchor="149.0" />
+                        <Button fx:id="changePasswordBtn" layoutX="370.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchInterfaces" prefHeight="41.0" prefWidth="99.0" style="-fx-background-color: #e0ebeb; -fx-border-color: orange; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Changer" textFill="ORANGE" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="152.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="changePasswordBackBtn" layoutX="366.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchInterfaces" style="-fx-background-color: #e0ebeb; -fx-border-color: orange; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Retour" textFill="ORANGE" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="149.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <FontAwesomeIconView fill="ORANGE" glyphName="ARROW_LEFT" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="forgotPassword_side" layoutX="400.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="145.0" layoutY="77.0" text="Interface Pour Mot de Passe Oublié" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="118.0" layoutY="214.0" prefHeight="40.0" prefWidth="188.0" style="-fx-background-radius: 5px; -fx-background-color: #e0ebeb;" text="Choisir Votre Question" textFill="ORANGE" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="300.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="119.0" layoutY="272.0" prefHeight="40.0" prefWidth="188.0" style="-fx-background-radius: 5px; -fx-background-color: #e0ebeb;" text="Votre réponse" textFill="ORANGE" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="301.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="f_verify" layoutX="321.0" layoutY="272.0" prefHeight="40.0" prefWidth="170.0" promptText="réponse" AnchorPane.leftAnchor="321.0" AnchorPane.rightAnchor="119.0" />
+                        <Button fx:id="f_verifyBtn" layoutX="418.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchInterfaces" prefHeight="38.0" style="-fx-background-color: #e0ebeb;" text="Vérifier" textFill="ORANGE" AnchorPane.leftAnchor="418.0" AnchorPane.rightAnchor="117.0" />
+                        <Button fx:id="f_backBtn" layoutX="339.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchInterfaces" prefHeight="38.0" prefWidth="80.0" style="-fx-background-color: #e0ebeb;" text="Retour" textFill="ORANGE" AnchorPane.leftAnchor="338.0" AnchorPane.rightAnchor="183.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="ORANGE" glyphName="ARROW_LEFT" />
+                           </graphic>
+                        </Button>
+                        <ComboBox fx:id="f_question" layoutX="320.0" layoutY="214.0" prefHeight="40.0" prefWidth="170.0" promptText="Question" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="118.0" />
+                        <Label layoutX="120.0" layoutY="161.0" prefHeight="40.0" prefWidth="181.0" style="-fx-background-radius: 5px; -fx-background-color: #e0ebeb;" text="Email" textFill="ORANGE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="f_email" layoutX="323.0" layoutY="161.0" prefHeight="40.0" prefWidth="157.0" promptText="émail" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="login_side" layoutX="400.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="249.0" layoutY="40.0" text="Connection" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="146.0" layoutY="154.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #dad2c5;" text="Email" textFill="ORANGE" AnchorPane.leftAnchor="160.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="146.0" layoutY="203.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #dad2c5;" text="Mot de Passe" textFill="ORANGE" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="289.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="l_email" layoutX="326.0" layoutY="154.0" prefHeight="40.0" promptText="email" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="128.0" />
+                        <PasswordField fx:id="l_password" layoutX="326.0" layoutY="203.0" prefHeight="40.0" promptText="password" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="128.0" />
+                        <Hyperlink fx:id="forgotPassword" layoutX="161.0" layoutY="259.0" onAction="#switchInterfaces" text="Mot de Passe Oblié ?" textFill="ORANGE" />
+                        <Button fx:id="loginBtn" layoutX="161.0" layoutY="306.0" mnemonicParsing="false" onAction="#signIn" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Connecter" textFill="ORANGE" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="289.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="createAccountBtn" layoutX="327.0" layoutY="306.0" mnemonicParsing="false" onAction="#switchInterfaces" prefHeight="41.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Créer une Compte" textFill="ORANGE" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="128.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="signup_side" layoutX="400.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="259.0" layoutY="14.0" text="Inscription" textFill="ORANGE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="59.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Nom" textFill="ORANGE" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="103.0" layoutY="108.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Prénom" textFill="ORANGE" AnchorPane.leftAnchor="103.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="103.0" layoutY="156.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Type d'Utilisateur" textFill="ORANGE" AnchorPane.leftAnchor="103.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="204.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Email" textFill="ORANGE" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="103.0" layoutY="250.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Mot de Passe" textFill="ORANGE" AnchorPane.leftAnchor="103.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="297.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Statut" textFill="ORANGE" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="s_nom" layoutX="315.0" layoutY="57.0" prefHeight="40.0" promptText="Nom" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="125.0" />
+                        <TextField fx:id="s_prenom" layoutX="315.0" layoutY="106.0" prefHeight="40.0" promptText="Prénom" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="125.0" />
+                        <TextField fx:id="s_email" layoutX="315.0" layoutY="202.0" prefHeight="40.0" promptText="Email" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="125.0" />
+                        <ComboBox fx:id="s_type_utilisateur" layoutX="315.0" layoutY="154.0" prefHeight="40.0" prefWidth="150.0" promptText="Type" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="125.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox fx:id="s_statut" layoutX="316.0" layoutY="297.0" prefHeight="40.0" prefWidth="150.0" promptText="Statut" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="126.0" />
+                        <PasswordField fx:id="s_password" layoutX="314.0" layoutY="250.0" prefHeight="40.0" promptText="Password" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="123.0" />
+                        <Button fx:id="dejaBtn" layoutX="132.0" layoutY="452.0" mnemonicParsing="false" onAction="#switchInterfaces" style="-fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="J'ai déja un Compte" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="signUpBtn" layoutX="343.0" layoutY="452.0" mnemonicParsing="false" onAction="#signUpFucntion" style="-fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="S'Inscrire" textFill="ORANGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ComboBox fx:id="s_question" layoutX="315.0" layoutY="343.0" prefHeight="40.0" prefWidth="150.0" promptText="Question" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="126.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <Label layoutX="104.0" layoutY="343.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Question" textFill="ORANGE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="391.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e4e1db;" text="Réponse" textFill="ORANGE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="s_reponse" layoutX="315.0" layoutY="389.0" prefHeight="40.0" promptText="Réponse" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="126.0" />
+                     </children></AnchorPane>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
