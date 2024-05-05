@@ -148,7 +148,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                zayotech.restaurantmanagementsystem/zayotech.restaurantmanagementsystem.HelloApplication
+                                zayotech.restaurantmanagementsystem/zayotech.restaurantmanagementsystem.Main3
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

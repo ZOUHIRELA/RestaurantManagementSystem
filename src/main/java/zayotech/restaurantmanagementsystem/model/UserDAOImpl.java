@@ -171,6 +171,4 @@ public class UserDAOImpl implements UserDAO {
         }
         return userType;
     }
-
-
 }

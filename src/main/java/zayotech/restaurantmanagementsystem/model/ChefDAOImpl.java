@@ -62,47 +62,6 @@ public class ChefDAOImpl implements ChefDAO {
         con.close();
     }
 
-    @Override
-    public void getAllEmployees(TextArea nomTextArea, TextArea prenomTextArea, TextArea posteTextArea, TextArea salaireTextArea, TextArea dateEmbaucheTextArea) throws SQLException {
-
-        nomTextArea.clear();
-        prenomTextArea.clear();
-        posteTextArea.clear();
-        salaireTextArea.clear();
-        dateEmbaucheTextArea.clear();
-
-        UserDAOImpl userDAO = new UserDAOImpl();
-        Connection con = userDAO.getConnection();
-        String sql = "select ID_employe , Nom , Prenom , Poste , Salaire , Date_embauche from employes";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-
-        while (rs.next()) {
-            nomTextArea.appendText(rs.getInt("ID_employe")+" : "+rs.getString("Nom") + "\t");
-            prenomTextArea.appendText(rs.getString("Prenom") + "\t");
-            posteTextArea.appendText(rs.getString("Poste") + "\t");
-            salaireTextArea.appendText(rs.getString("Salaire") + "\t");
-            dateEmbaucheTextArea.appendText(rs.getString("Date_embauche") + "\n");
-
-            // Insérer une ligne horizontale après chaque employé
-            nomTextArea.appendText("---------------------\n");
-            prenomTextArea.appendText("---------------------\n");
-            posteTextArea.appendText("-----------------------\n");
-            salaireTextArea.appendText("-------------------\n");
-            dateEmbaucheTextArea.appendText("------------------------\n");
-
-        }
-
-        nomTextArea.setEditable(false);
-        prenomTextArea.setEditable(false);
-        posteTextArea.setEditable(false);
-        salaireTextArea.setEditable(false);
-        dateEmbaucheTextArea.setEditable(false);
-
-        rs.close();
-        ps.close();
-        con.close();
-    }
 }
 
 

@@ -11,6 +11,7 @@ module zayotech.restaurantmanagementsystem {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
 
     opens zayotech.restaurantmanagementsystem to javafx.fxml;
     exports zayotech.restaurantmanagementsystem;

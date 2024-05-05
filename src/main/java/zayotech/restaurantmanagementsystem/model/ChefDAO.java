@@ -10,5 +10,4 @@ public interface ChefDAO {
 
     public void modifyMenu(String jour, String typeRepas, TextArea platPrincipalTextArea, TextArea entreeTextArea, TextArea dessertTextArea, TextArea descriptionTextArea, CheckBox disponibiliteCheckBox) throws SQLException;
 
-    public void getAllEmployees(TextArea nomTextArea, TextArea prenomTextArea, TextArea posteTextArea, TextArea salaireTextArea, TextArea dateEmbaucheTextArea) throws SQLException;
 }
