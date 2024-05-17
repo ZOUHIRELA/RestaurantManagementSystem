@@ -370,9 +370,9 @@ public class ProductDAOImpl {
             String remarque = "";
             String nomProduit = resultSet.getString("Nom_produit");
             int quantiteDisponible = resultSet.getInt("Quantite_disponible");
-            int prixProduit = resultSet.getInt("Prix_produit");
-            int prixProduitPourDisponible = prixProduit * quantiteDisponible;
-            int prixProduitPourJourTicket = prixProduit * Integer.parseInt(jour_ticket.getText());
+            double prixProduit = resultSet.getDouble("Prix_produit");
+            double prixProduitPourDisponible = prixProduit * quantiteDisponible;
+            double prixProduitPourJourTicket = prixProduit * Integer.parseInt(jour_ticket.getText());
 
             if (quantiteDisponible > Integer.parseInt(jour_ticket.getText())) {
                 remarque = "Bon, ce produit existe en stock avec une quantité de " + quantiteDisponible + " pour le jour " + jour + ", ce qui est supérieur au nombre de tickets (" + Integer.parseInt(jour_ticket.getText()) + "). Gain potentiel : " + (prixProduitPourDisponible - prixProduitPourJourTicket);

@@ -7,23 +7,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import zayotech.restaurantmanagementsystem.model.ChefDAOImpl;
-import zayotech.restaurantmanagementsystem.model.EmployeeDAOImpl;
-import zayotech.restaurantmanagementsystem.model.ProductDAOImpl;
-import zayotech.restaurantmanagementsystem.model.UserDAOImpl;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import zayotech.restaurantmanagementsystem.model.*;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class HelloController {
-
-
-    @FXML
-    private Button addEmployeBtn;
-
-    @FXML
-    private Button addProductBtn;
-
     @FXML
     private TextField addProduct_jour;
 
@@ -89,9 +82,6 @@ public class HelloController {
 
     @FXML
     private AnchorPane chef_mardiMenu;
-
-    @FXML
-    private AnchorPane chef_menu;
 
     @FXML
     private Button chef_menuBtn;
@@ -235,9 +225,6 @@ public class HelloController {
     private TextArea dimanche_diner_platPrincipal1;
 
     @FXML
-    private TextField dimanche_ticket;
-
-    @FXML
     private Button dimanche_ticketBtn;
 
     @FXML
@@ -321,8 +308,6 @@ public class HelloController {
     @FXML
     private TextArea jeudi_diner_platPrincipal1;
 
-    @FXML
-    private TextField jeudi_ticket;
 
     @FXML
     private Button jeudi_ticketBtn;
@@ -339,8 +324,6 @@ public class HelloController {
     @FXML
     private PasswordField l_password;
 
-    @FXML
-    private Button loginBtn;
 
     @FXML
     private AnchorPane login_side;
@@ -412,9 +395,6 @@ public class HelloController {
     private Button lundi_ticktBtn;
 
     @FXML
-    private AnchorPane main_side;
-
-    @FXML
     private TextArea mardi_dejeuner_description;
 
     @FXML
@@ -474,8 +454,6 @@ public class HelloController {
     @FXML
     private TextArea mardi_diner_platPrincipal1;
 
-    @FXML
-    private TextField mardi_ticket;
 
     @FXML
     private Button mardi_ticketBtn;
@@ -540,8 +518,6 @@ public class HelloController {
     @FXML
     private TextArea mercredi_diner_platPrincipal1;
 
-    @FXML
-    private TextField mercredi_ticket;
 
     @FXML
     private Button mercredi_ticketBtn;
@@ -648,8 +624,6 @@ public class HelloController {
     @FXML
     private TextArea samedi_diner_platPrincipal1;
 
-    @FXML
-    private TextField samedi_ticket;
 
     @FXML
     private Button samedi_ticketBtn;
@@ -657,14 +631,10 @@ public class HelloController {
     @FXML
     private AnchorPane service_side;
 
-    @FXML
-    private Button signUpBtn;
 
     @FXML
     private AnchorPane signup_side;
 
-    @FXML
-    private ScrollPane sp_main;
 
     @FXML
     private AnchorPane student_MenuSide;
@@ -694,25 +664,20 @@ public class HelloController {
     private AnchorPane student_lundiMenu;
 
     @FXML
+    private Button student_merdiBtn;
+    @FXML
     private AnchorPane student_mardiMenu;
 
-    @FXML
-    private AnchorPane student_menu;
 
     @FXML
     private Button student_menuBtn;
 
-    @FXML
-    private AnchorPane student_menu_side;
 
     @FXML
     private Button student_mercrediBtn;
 
     @FXML
     private AnchorPane student_mercrediMenu;
-
-    @FXML
-    private Button student_merdiBtn;
 
     @FXML
     private Button student_samediBtn;
@@ -791,8 +756,7 @@ public class HelloController {
     @FXML
     private TextArea vendredi_diner_platPrincipal1;
 
-    @FXML
-    private TextField vendredi_ticket;
+
 
     @FXML
     private Button vendredi_ticketBtn;
@@ -945,17 +909,6 @@ public class HelloController {
     @FXML
     private AnchorPane communication_side1;
 
-    @FXML
-    private ScrollPane sp_main1;
-
-    @FXML
-    private VBox vBox_messages1;
-
-    @FXML
-    private Button button_send1;
-
-    @FXML
-    private TextField tf_message1;
 
 
     //Employe
@@ -967,14 +920,7 @@ public class HelloController {
     private Button student_communicationBtn1;
     @FXML
     private AnchorPane communication_side11;
-    @FXML
-    private ScrollPane sp_main11;
-    @FXML
-    private VBox vBox_messages11;
-    @FXML
-    private Button button_send11;
-    @FXML
-    private TextField tf_message11;
+
     @FXML
     private AnchorPane student_MenuSide1;
     @FXML
@@ -1149,6 +1095,12 @@ public class HelloController {
     private CheckBox lundi_dejeuner_disponnible11;
     @FXML
     private CheckBox lundi_diner_disponnible11;
+    @FXML
+    private Button student_deconnecte;
+    @FXML
+    private Button student_deconnecte1;
+    @FXML
+    private Button chef_deconnecte;
 
 
     private UserDAOImpl userDAO;
@@ -1187,12 +1139,77 @@ public class HelloController {
     private EmployeeDAOImpl employeeDAO;
 
     @FXML
+    public void signOut(ActionEvent event) {
+        if (event.getSource() == chef_deconnecte) {
+            service_side.setVisible(true);
+
+            login_side.setVisible(true);
+            forgotPassword_side.setVisible(true);
+            changePassword_side.setVisible(true);
+
+            chef_restaurant_bar.setVisible(false);
+            chef_menu_side.setVisible(false);
+            chef_employee_side.setVisible(false);
+            chef_comptabilité_menu.setVisible(false);
+            communication_side.setVisible(false);
+
+            student_bar.setVisible(false);
+            student_MenuSide.setVisible(false);
+            communication_side1.setVisible(false);
+
+            student_bar1.setVisible(false);
+            student_MenuSide1.setVisible(false);
+            communication_side11.setVisible(false);
+        } else if (event.getSource() == student_deconnecte) {
+
+            service_side.setVisible(true);
+            login_side.setVisible(true);
+            forgotPassword_side.setVisible(true);
+            changePassword_side.setVisible(true);
+
+            chef_restaurant_bar.setVisible(false);
+            chef_menu_side.setVisible(false);
+            chef_employee_side.setVisible(false);
+            chef_comptabilité_menu.setVisible(false);
+            communication_side.setVisible(false);
+
+            student_bar.setVisible(false);
+            student_MenuSide.setVisible(false);
+            communication_side1.setVisible(false);
+
+            student_bar1.setVisible(false);
+            student_MenuSide1.setVisible(false);
+            communication_side11.setVisible(false);
+        } else if (event.getSource() == student_deconnecte1) {
+            service_side.setVisible(true);
+
+            login_side.setVisible(true);
+            forgotPassword_side.setVisible(true);
+            changePassword_side.setVisible(true);
+
+            chef_restaurant_bar.setVisible(false);
+            chef_menu_side.setVisible(false);
+            chef_employee_side.setVisible(false);
+            chef_comptabilité_menu.setVisible(false);
+            communication_side.setVisible(false);
+
+            student_bar.setVisible(false);
+            student_MenuSide.setVisible(false);
+            communication_side1.setVisible(false);
+
+            student_bar1.setVisible(false);
+            student_MenuSide1.setVisible(false);
+            communication_side11.setVisible(false);
+        }
+    }
+
+    @FXML
     public void addProduct() throws SQLException {
         userDAO = new UserDAOImpl();
         if (
                 addProduct_jour.getText().isEmpty() || addProduct_nom.getText().isEmpty() || addProduct_quantité.getText().isEmpty() ||
                         addProduct_quantitéMinimale.getText().isEmpty() || addProduct_prix.getText().isEmpty()) {
-            userDAO.alert(Alert.AlertType.ERROR, "Erreur de Saisie", "veuillez remplir tous les champs !");
+                userDAO.alert(Alert.AlertType.ERROR, "Erreur de Saisie", "veuillez remplir tous les champs !");
         }
         String jour = addProduct_jour.getText();
         switch (jour) {
@@ -1222,7 +1239,7 @@ public class HelloController {
                 break;
         }
 
-// Nettoyage des champs après l'ajout du produit
+
         addProduct_jour.clear();
         addProduct_nom.clear();
         addProduct_quantité.clear();
@@ -1366,6 +1383,16 @@ public class HelloController {
         employeeDAO = new EmployeeDAOImpl(employesTable, nomEmployeCol, prenomEmployeCol, posteEmployeCol, salaireEmployeCol, dateEmbaucheCol, modifierBtnCol, validerBtnCol, supprimerBtnCol);
         employeeDAO.getAllEmployees();
 
+        Communication communication = new Communication();
+        try {
+            List<String[]> messages = communication.getAllMessagesFromDatabase();
+            for (String[] messageInfo : messages) {
+                addMessageToUI(messageInfo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -1397,39 +1424,62 @@ public class HelloController {
             login_side.setVisible(false);
             forgotPassword_side.setVisible(false);
             changePassword_side.setVisible(false);
+
+            chef_restaurant_bar.setVisible(true);
+            chef_menu_side.setVisible(true);
+            chef_employee_side.setVisible(true);
+            chef_comptabilité_menu.setVisible(true);
+            communication_side.setVisible(true);
+
         } else if (type.equals("Etudiant")) {
             service_side.setVisible(false);
             login_side.setVisible(false);
             forgotPassword_side.setVisible(false);
             changePassword_side.setVisible(false);
+
             chef_restaurant_bar.setVisible(false);
             pere_chefMenu_side.setVisible(false);
             chef_employee_side.setVisible(false);
             chef_comptabilité_menu.setVisible(false);
             communication_side.setVisible(false);
+
+            student_bar.setVisible(true);
+            student_MenuSide.setVisible(true);
+            communication_side1.setVisible(true);
         } else if (type.equals("Responsable des Etudiants")) {
             service_side.setVisible(false);
             login_side.setVisible(false);
             forgotPassword_side.setVisible(false);
             changePassword_side.setVisible(false);
+
             chef_restaurant_bar.setVisible(false);
             pere_chefMenu_side.setVisible(false);
             chef_employee_side.setVisible(false);
             chef_comptabilité_menu.setVisible(false);
             communication_side.setVisible(false);
+
+            student_bar.setVisible(true);
+            student_MenuSide.setVisible(true);
+            communication_side1.setVisible(true);
         } else if (type.equals("Employée")) {
             service_side.setVisible(false);
             login_side.setVisible(false);
             forgotPassword_side.setVisible(false);
             changePassword_side.setVisible(false);
+
             chef_restaurant_bar.setVisible(false);
             pere_chefMenu_side.setVisible(false);
             chef_employee_side.setVisible(false);
             chef_comptabilité_menu.setVisible(false);
             communication_side.setVisible(false);
+
             student_bar.setVisible(false);
             student_MenuSide.setVisible(false);
             communication_side1.setVisible(false);
+
+            student_bar1.setVisible(true);
+            student_MenuSide1.setVisible(true);
+            communication_side11.setVisible(true);
         }
     }
 
@@ -1457,6 +1507,18 @@ public class HelloController {
             chef_employee_side.setVisible(false);
             chef_comptabilité_menu.setVisible(false);
             communication_side.setVisible(true);
+        } else if (event.getSource() == student_menuBtn) {
+            communication_side.setVisible(false);
+            student_MenuSide.setVisible(true);
+        } else if (event.getSource() == student_communicationBtn) {
+            communication_side.setVisible(true);
+            student_MenuSide.setVisible(false);
+        } else if (event.getSource() == student_menuBtn1) {
+            communication_side1.setVisible(false);
+            student_MenuSide1.setVisible(true);
+        } else if (event.getSource() == student_communicationBtn1) {
+            communication_side1.setVisible(true);
+            student_MenuSide1.setVisible(false);
         }
     }
 
@@ -1796,5 +1858,386 @@ public class HelloController {
         }
     }
 
+    //student
+    @FXML
+    public void getStudentMenu(ActionEvent event) throws SQLException {
+        if (event.getSource() == student_lundiBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: black;");
+            student_merdiBtn.setStyle("-fx-background-color: white;");
+            student_mercrediBtn.setStyle("-fx-background-color: white;");
+            student_jeudiBtn.setStyle("-fx-background-color: white;");
+            student_vendrediBtn.setStyle("-fx-background-color: white;");
+            student_samediBtn.setStyle("-fx-background-color: white;");
+            student_dimancheBtn.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu.setVisible(true);
+            student_mardiMenu.setVisible(false);
+            student_mercrediMenu.setVisible(false);
+            student_jeudiMenu.setVisible(false);
+            student_vendrediMenu.setVisible(false);
+            student_samediMenu.setVisible(false);
+            student_dimancheMenu.setVisible(false);
+
+            changeMenu(lundi_dejeuner_platPrincipal1, lundi_dejeuner_entrees1, lundi_dejeuner_dessert1, lundi_dejeuner_description1, lundi_dejeuner_disponnible1,
+                    lundi_diner_platPrincipal1, lundi_diner_entrees1, lundi_diner_dessert1, lundi_diner_diescription1, lundi_diner_disponnible1,
+                    "Lundi");
+
+        } else if (event.getSource() == student_merdiBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: white;");
+            student_merdiBtn.setStyle("-fx-background-color: black;");
+            student_mercrediBtn.setStyle("-fx-background-color: white;");
+            student_jeudiBtn.setStyle("-fx-background-color: white;");
+            student_vendrediBtn.setStyle("-fx-background-color: white;");
+            student_samediBtn.setStyle("-fx-background-color: white;");
+            student_dimancheBtn.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu.setVisible(false);
+            student_mardiMenu.setVisible(true);
+            student_mercrediMenu.setVisible(false);
+            student_jeudiMenu.setVisible(false);
+            student_vendrediMenu.setVisible(false);
+            student_samediMenu.setVisible(false);
+            student_dimancheMenu.setVisible(false);
+
+            changeMenu(mardi_dejeuner_platPrincipal1, mardi_dejeuner_entrees1, mardi_dejeuner_dessert1, mardi_dejeuner_description1, mardi_dejeuner_disponnible1,
+                    mardi_diner_platPrincipal1, mardi_diner_entrees1, mardi_diner_dessert1, mardi_diner_description1, mardi_diner_disponnible1,
+                    "Mardi");
+
+        } else if (event.getSource() == student_mercrediBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: white;");
+            student_merdiBtn.setStyle("-fx-background-color: white;");
+            student_mercrediBtn.setStyle("-fx-background-color: black;");
+            student_jeudiBtn.setStyle("-fx-background-color: white;");
+            student_vendrediBtn.setStyle("-fx-background-color: white;");
+            student_samediBtn.setStyle("-fx-background-color: white;");
+            student_dimancheBtn.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu.setVisible(false);
+            student_mardiMenu.setVisible(false);
+            student_mercrediMenu.setVisible(true);
+            student_jeudiMenu.setVisible(false);
+            student_vendrediMenu.setVisible(false);
+            student_samediMenu.setVisible(false);
+            student_dimancheMenu.setVisible(false);
+
+            changeMenu(mercredi_dejeuner_platPrincipal1, mercredi_dejeuner_entrees1, mercredi_dejeuner_dessert1, mercredi_dejeuner_description1, mercredi_dejeuner_disponnible1,
+                    mercredi_diner_platPrincipal1, mercredi_diner_entrees1, mercredi_diner_dessert1, mercredi_diner_description1, mercredi_diner_disponnible1,
+                    "Mercredi");
+
+        } else if (event.getSource() == student_jeudiBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: white;");
+            student_merdiBtn.setStyle("-fx-background-color: white;");
+            student_mercrediBtn.setStyle("-fx-background-color: white;");
+            student_jeudiBtn.setStyle("-fx-background-color: black;");
+            student_vendrediBtn.setStyle("-fx-background-color: white;");
+            student_samediBtn.setStyle("-fx-background-color: white;");
+            student_dimancheBtn.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu.setVisible(false);
+            student_mardiMenu.setVisible(false);
+            student_mercrediMenu.setVisible(false);
+            student_jeudiMenu.setVisible(true);
+            student_vendrediMenu.setVisible(false);
+            student_samediMenu.setVisible(false);
+            student_dimancheMenu.setVisible(false);
+
+            changeMenu(jeudi_dejeuner_platPrincipal1, jeudi_dejeuner_entrees1, jeudi_dejeuner_dessert1, jeudi_dejeuner_description1, jeudi_dejeuner_disponnible1,
+                    jeudi_diner_platPrincipal1, jeudi_diner_entrees1, jeudi_diner_dessert1, jeudi_diner_description1, jeudi_diner_disponnible1,
+                    "Jeudi");
+
+        } else if (event.getSource() == student_vendrediBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: white;");
+            student_merdiBtn.setStyle("-fx-background-color: white;");
+            student_mercrediBtn.setStyle("-fx-background-color: white;");
+            student_jeudiBtn.setStyle("-fx-background-color: white;");
+            student_vendrediBtn.setStyle("-fx-background-color: black;");
+            student_samediBtn.setStyle("-fx-background-color: white;");
+            student_dimancheBtn.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu.setVisible(false);
+            student_mardiMenu.setVisible(false);
+            student_mercrediMenu.setVisible(false);
+            student_jeudiMenu.setVisible(false);
+            student_vendrediMenu.setVisible(true);
+            student_samediMenu.setVisible(false);
+            student_dimancheMenu.setVisible(false);
+
+            changeMenu(vendredi_dejeuner_platPrincipal1, vendredi_dejeuner_entrees1, vendredi_dejeuner_dessert1, vendredi_dejeuner_description1, vendredi_dejeuner_disponnible1,
+                    vendredi_diner_platPrincipal1, vendredi_diner_entrees1, vendredi_diner_dessert1, vendredi_diner_description1, vendredi_diner_disponnible1,
+                    "Vendredi");
+
+        } else if (event.getSource() == student_samediBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: white;");
+            student_merdiBtn.setStyle("-fx-background-color: white;");
+            student_mercrediBtn.setStyle("-fx-background-color: white;");
+            student_jeudiBtn.setStyle("-fx-background-color: white;");
+            student_vendrediBtn.setStyle("-fx-background-color: white;");
+            student_samediBtn.setStyle("-fx-background-color: black;");
+            student_dimancheBtn.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu.setVisible(false);
+            student_mardiMenu.setVisible(false);
+            student_mercrediMenu.setVisible(false);
+            student_jeudiMenu.setVisible(false);
+            student_vendrediMenu.setVisible(false);
+            student_samediMenu.setVisible(true);
+            student_dimancheMenu.setVisible(false);
+
+            changeMenu(samedi_dejeuner_platPrincipal1, samedi_dejeuner_entrees1, samedi_dejeuner_dessert1, samedi_dejeuner_description1, samedi_dejeuner_disponnible1,
+                    samedi_diner_platPrincipal1, samedi_diner_entrees1, samedi_diner_dessert1, samedi_diner_description1, samedi_diner_disponnible1,
+                    "Samedi");
+
+        } else if (event.getSource() == student_dimancheBtn) {
+
+            student_lundiBtn.setStyle("-fx-background-color: white;");
+            student_merdiBtn.setStyle("-fx-background-color: white;");
+            student_mercrediBtn.setStyle("-fx-background-color: white;");
+            student_jeudiBtn.setStyle("-fx-background-color: white;");
+            student_vendrediBtn.setStyle("-fx-background-color: white;");
+            student_samediBtn.setStyle("-fx-background-color: white;");
+            student_dimancheBtn.setStyle("-fx-background-color: black;");
+
+            student_lundiMenu.setVisible(false);
+            student_mardiMenu.setVisible(false);
+            student_mercrediMenu.setVisible(false);
+            student_jeudiMenu.setVisible(false);
+            student_vendrediMenu.setVisible(false);
+            student_samediMenu.setVisible(false);
+            student_dimancheMenu.setVisible(true);
+
+            changeMenu(dimanche_dejeuner_platPrincipal1, dimanche_dejeuner_entrees1, dimanche_dejeuner_dessert1, dimanche_dejeuner_description1, dimanche_dejeuner_disponnible1,
+                    dimanche_diner_platPrincipal1, dimanche_diner_entrees1, dimanche_diner_dessert1, dimanche_diner_description1, dimanche_diner_disponnible1,
+                    "Dimanche");
+
+        }
+    }
+
+    @FXML
+    public void getEmployeMenu(ActionEvent event) throws SQLException {
+        if (event.getSource() == student_lundiBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: black;");
+            student_merdiBtn1.setStyle("-fx-background-color: white;");
+            student_mercrediBtn1.setStyle("-fx-background-color: white;");
+            student_jeudiBtn1.setStyle("-fx-background-color: white;");
+            student_vendrediBtn1.setStyle("-fx-background-color: white;");
+            student_samediBtn1.setStyle("-fx-background-color: white;");
+            student_dimancheBtn1.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu1.setVisible(true);
+            student_mardiMenu1.setVisible(false);
+            student_mercrediMenu1.setVisible(false);
+            student_jeudiMenu1.setVisible(false);
+            student_vendrediMenu1.setVisible(false);
+            student_samediMenu1.setVisible(false);
+            student_dimancheMenu1.setVisible(false);
+
+            changeMenu(lundi_dejeuner_platPrincipal11, lundi_dejeuner_entrees11, lundi_dejeuner_dessert11, lundi_dejeuner_description11, lundi_dejeuner_disponnible11,
+                    lundi_diner_platPrincipal11, lundi_diner_entrees11, lundi_diner_dessert11, lundi_diner_diescription11, lundi_diner_disponnible11,
+                    "Lundi");
+
+        } else if (event.getSource() == student_merdiBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: white;");
+            student_merdiBtn1.setStyle("-fx-background-color: black;");
+            student_mercrediBtn1.setStyle("-fx-background-color: white;");
+            student_jeudiBtn1.setStyle("-fx-background-color: white;");
+            student_vendrediBtn1.setStyle("-fx-background-color: white;");
+            student_samediBtn1.setStyle("-fx-background-color: white;");
+            student_dimancheBtn1.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu1.setVisible(false);
+            student_mardiMenu1.setVisible(true);
+            student_mercrediMenu1.setVisible(false);
+            student_jeudiMenu1.setVisible(false);
+            student_vendrediMenu1.setVisible(false);
+            student_samediMenu1.setVisible(false);
+            student_dimancheMenu1.setVisible(false);
+
+            changeMenu(mardi_dejeuner_platPrincipal11, mardi_dejeuner_entrees11, mardi_dejeuner_dessert11, mardi_dejeuner_description11, mardi_dejeuner_disponnible11,
+                    mardi_diner_platPrincipal11, mardi_diner_entrees11, mardi_diner_dessert11, mardi_diner_description11, mardi_diner_disponnible11,
+                    "Mardi");
+
+        } else if (event.getSource() == student_mercrediBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: white;");
+            student_merdiBtn1.setStyle("-fx-background-color: white;");
+            student_mercrediBtn1.setStyle("-fx-background-color: black;");
+            student_jeudiBtn1.setStyle("-fx-background-color: white;");
+            student_vendrediBtn1.setStyle("-fx-background-color: white;");
+            student_samediBtn1.setStyle("-fx-background-color: white;");
+            student_dimancheBtn1.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu1.setVisible(false);
+            student_mardiMenu1.setVisible(false);
+            student_mercrediMenu1.setVisible(true);
+            student_jeudiMenu1.setVisible(false);
+            student_vendrediMenu1.setVisible(false);
+            student_samediMenu1.setVisible(false);
+            student_dimancheMenu1.setVisible(false);
+
+            changeMenu(mercredi_dejeuner_platPrincipal11, mercredi_dejeuner_entrees11, mercredi_dejeuner_dessert11, mercredi_dejeuner_description11, mercredi_dejeuner_disponnible11,
+                    mercredi_diner_platPrincipal11, mercredi_diner_entrees11, mercredi_diner_dessert11, mercredi_diner_description11, mercredi_diner_disponnible11,
+                    "Mercredi");
+
+        } else if (event.getSource() == student_jeudiBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: white;");
+            student_merdiBtn1.setStyle("-fx-background-color: white;");
+            student_mercrediBtn1.setStyle("-fx-background-color: white;");
+            student_jeudiBtn1.setStyle("-fx-background-color: black;");
+            student_vendrediBtn1.setStyle("-fx-background-color: white;");
+            student_samediBtn1.setStyle("-fx-background-color: white;");
+            student_dimancheBtn1.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu1.setVisible(false);
+            student_mardiMenu1.setVisible(false);
+            student_mercrediMenu1.setVisible(false);
+            student_jeudiMenu1.setVisible(true);
+            student_vendrediMenu1.setVisible(false);
+            student_samediMenu1.setVisible(false);
+            student_dimancheMenu1.setVisible(false);
+
+            changeMenu(jeudi_dejeuner_platPrincipal11, jeudi_dejeuner_entrees11, jeudi_dejeuner_dessert11, jeudi_dejeuner_description11, jeudi_dejeuner_disponnible11,
+                    jeudi_diner_platPrincipal11, jeudi_diner_entrees11, jeudi_diner_dessert11, jeudi_diner_description11, jeudi_diner_disponnible11,
+                    "Jeudi");
+
+        } else if (event.getSource() == student_vendrediBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: white;");
+            student_merdiBtn1.setStyle("-fx-background-color: white;");
+            student_mercrediBtn1.setStyle("-fx-background-color: white;");
+            student_jeudiBtn1.setStyle("-fx-background-color: white;");
+            student_vendrediBtn1.setStyle("-fx-background-color: black;");
+            student_samediBtn1.setStyle("-fx-background-color: white;");
+            student_dimancheBtn1.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu1.setVisible(false);
+            student_mardiMenu1.setVisible(false);
+            student_mercrediMenu1.setVisible(false);
+            student_jeudiMenu1.setVisible(false);
+            student_vendrediMenu1.setVisible(true);
+            student_samediMenu1.setVisible(false);
+            student_dimancheMenu1.setVisible(false);
+
+            changeMenu(vendredi_dejeuner_platPrincipal11, vendredi_dejeuner_entrees11, vendredi_dejeuner_dessert11, vendredi_dejeuner_description11, vendredi_dejeuner_disponnible11,
+                    vendredi_diner_platPrincipal11, vendredi_diner_entrees11, vendredi_diner_dessert11, vendredi_diner_description11, vendredi_diner_disponnible11,
+                    "Vendredi");
+
+        } else if (event.getSource() == student_samediBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: white;");
+            student_merdiBtn1.setStyle("-fx-background-color: white;");
+            student_mercrediBtn1.setStyle("-fx-background-color: white;");
+            student_jeudiBtn1.setStyle("-fx-background-color: white;");
+            student_vendrediBtn1.setStyle("-fx-background-color: white;");
+            student_samediBtn1.setStyle("-fx-background-color: black;");
+            student_dimancheBtn1.setStyle("-fx-background-color: white;");
+
+            student_lundiMenu1.setVisible(false);
+            student_mardiMenu1.setVisible(false);
+            student_mercrediMenu1.setVisible(false);
+            student_jeudiMenu1.setVisible(false);
+            student_vendrediMenu1.setVisible(false);
+            student_samediMenu1.setVisible(true);
+            student_dimancheMenu1.setVisible(false);
+
+            changeMenu(samedi_dejeuner_platPrincipal11, samedi_dejeuner_entrees11, samedi_dejeuner_dessert11, samedi_dejeuner_description11, samedi_dejeuner_disponnible11,
+                    samedi_diner_platPrincipal11, samedi_diner_entrees11, samedi_diner_dessert11, samedi_diner_description11, samedi_diner_disponnible11,
+                    "Samedi");
+
+        } else if (event.getSource() == student_dimancheBtn1) {
+
+            student_lundiBtn1.setStyle("-fx-background-color: white;");
+            student_merdiBtn1.setStyle("-fx-background-color: white;");
+            student_mercrediBtn1.setStyle("-fx-background-color: white;");
+            student_jeudiBtn1.setStyle("-fx-background-color: white;");
+            student_vendrediBtn1.setStyle("-fx-background-color: white;");
+            student_samediBtn1.setStyle("-fx-background-color: white;");
+            student_dimancheBtn1.setStyle("-fx-background-color: black;");
+
+            student_lundiMenu1.setVisible(false);
+            student_mardiMenu1.setVisible(false);
+            student_mercrediMenu1.setVisible(false);
+            student_jeudiMenu1.setVisible(false);
+            student_vendrediMenu1.setVisible(false);
+            student_samediMenu1.setVisible(false);
+            student_dimancheMenu1.setVisible(true);
+
+            changeMenu(dimanche_dejeuner_platPrincipal11, dimanche_dejeuner_entrees11, dimanche_dejeuner_dessert11, dimanche_dejeuner_description11, dimanche_dejeuner_disponnible11,
+                    dimanche_diner_platPrincipal11, dimanche_diner_entrees11, dimanche_diner_dessert11, dimanche_diner_description11, dimanche_diner_disponnible11,
+                    "Dimanche");
+
+        }
+    }
+
+    @FXML
+    private void sendMessage() throws SQLException {
+        UserDAOImpl userDAO = new UserDAOImpl();
+        String userEmail = l_email.getText();
+        String[] userInfo = userDAO.getUserInfos(userEmail); // Pass userEmail to getUserInfos
+
+        int userId = Integer.parseInt(userInfo[1]);
+        String userType = userInfo[0];
+        String userName = userInfo[2];
+        String userLastName = userInfo[3];
+
+        String message = tf_message.getText();
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        Communication communication = new Communication();
+        communication.insertMessageIntoDatabase(userId, message, currentDateTime.toLocalDate());
+
+        Text textMessage = new Text(userType + " " + userName + " " + userLastName + ":   " + message);
+        textMessage.setStyle("-fx-font-size: 14px;");
+
+        setColorAndBackground(userType, textMessage);
+
+        vBox_messages.getChildren().add(textMessage);
+
+        tf_message.clear();
+    }
+
+    private void setColorAndBackground(String userType, Text textMessage) {
+        switch (userType) {
+            case "Responsable des Etudiants":
+                textMessage.setFill(Color.GREEN);
+                textMessage.setStyle(textMessage.getStyle() + "-fx-background-color: lightgreen;");
+                break;
+            case "Etudiant":
+                textMessage.setFill(Color.BLACK);
+                textMessage.setStyle(textMessage.getStyle() + "-fx-background-color: lightgrey;");
+                break;
+            case "Employée":
+                textMessage.setFill(Color.BLUE);
+                textMessage.setStyle(textMessage.getStyle() + "-fx-background-color: lightblue;");
+                break;
+            case "Chef de Restaurant":
+                textMessage.setFill(Color.RED);
+                textMessage.setStyle(textMessage.getStyle() + "-fx-background-color: salmon;");
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void addMessageToUI(String[] messageInfo) {
+        String userType = messageInfo[2];
+        String userName = messageInfo[3];
+        String messageContent = messageInfo[1];
+
+        Text textMessage = new Text(userType + " " + userName + ": " + messageContent);
+        textMessage.setStyle("-fx-font-size: 14px;");
+
+        setColorAndBackground(userType, textMessage);
+
+        vBox_messages.getChildren().add(textMessage);
+    }
 
 }

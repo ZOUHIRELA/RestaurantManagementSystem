@@ -12,6 +12,7 @@ module zayotech.restaurantmanagementsystem {
     requires com.almasb.fxgl.all;
     requires java.sql;
     requires java.desktop;
+    requires mysql.connector.j;
 
     opens zayotech.restaurantmanagementsystem to javafx.fxml;
     exports zayotech.restaurantmanagementsystem;

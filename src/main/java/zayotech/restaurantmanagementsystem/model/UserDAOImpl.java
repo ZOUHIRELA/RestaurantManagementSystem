@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import java.sql.*;
 
 public class UserDAOImpl implements UserDAO {
+    private static String connectedUserEmail; // Variable statique pour stocker l'email de l'utilisateur connecté
     private Alert alert;
 
     public Alert alert(Alert.AlertType alertType, String title, String content) {
@@ -68,7 +69,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public String signIn(String email, String password) throws SQLException {
         if (email.isEmpty() || password.isEmpty()) {
-            alert(Alert.AlertType.ERROR, "Ereur de saisie", "Veuillez remplir tous les champs !");
+            alert(Alert.AlertType.ERROR, "Erreur de saisie", "Veuillez remplir tous les champs !");
         } else if (!email.matches("^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\\.)+(?:[a-zA-Z]{2,}|ac\\.ma)$")) {
             alert(Alert.AlertType.ERROR, "Email invalide", "Veuillez saisir une adresse email valide.");
         } else if (password.length() < 8 || !password.matches(".*[A-Z].*") || !password.matches(".*[a-z].*") || !password.matches(".*\\d.*") || !password.matches(".*[!@#$%^&*()_+{}\\[\\]|\\\\;:'\",.<>?/].*")) {
@@ -82,17 +83,14 @@ public class UserDAOImpl implements UserDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 alert(Alert.AlertType.INFORMATION, "Connection", "Vous avez connecté avec succès !");
-                return getUserType(email);
+                connectedUserEmail = email;
+                connectedUser.id_user = rs.getInt("ID_utilisateur");// Mettre à jour l'email de l'utilisateur connecté
+                return getConnectedUserInfo()[0];
             } else {
-                alert(Alert.AlertType.ERROR, "Connection", "Email ou Mote de Passe Erroné !");
+                alert(Alert.AlertType.ERROR, "Connection", "Email ou Mot de Passe Erroné !");
             }
         }
         return email;
-    }
-
-    @Override
-    public void signOut() {
-
     }
 
     @Override
@@ -108,11 +106,15 @@ public class UserDAOImpl implements UserDAO {
             ps.setString(1, email.getText());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                alert(Alert.AlertType.INFORMATION, "Changement", "Veuillez saisir votre nouveau mot de passe dans le slide !");
-                forgotPassword_side.setVisible(false);
-                email.clear();
-                question.getSelectionModel().clearSelection();
-                answer.clear();
+                if (rs.getString("Question").equals(question.getSelectionModel().getSelectedItem()) && rs.getString("Answer").equals(answer.getText())) {
+                    alert(Alert.AlertType.INFORMATION, "Changement", "Veuillez saisir votre nouveau mot de passe dans le slide !");
+                    forgotPassword_side.setVisible(false);
+                    email.clear();
+                    question.getSelectionModel().clearSelection();
+                    answer.clear();
+                } else {
+                    alert(Alert.AlertType.ERROR, "Erreur", "Question et Réponse ne correspands pas !");
+                }
             } else {
                 alert(Alert.AlertType.ERROR, "Erreur", "Utilisateur n'est pas éxiste !");
             }
@@ -145,22 +147,29 @@ public class UserDAOImpl implements UserDAO {
     }
 
 
-    @Override
-    public String getUserType(String email) throws SQLException {
+    public static String[] getConnectedUserInfo() throws SQLException {
+        if (connectedUserEmail == null) {
+            return null;
+        }
+
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String userType = null;
+        String[] userInfos = null;
 
         try {
-            con = getConnection();
-            String sql = "SELECT Type_utilisateur FROM utilisateurs WHERE Email = ?";
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "root");
+            String sql = "SELECT * FROM utilisateurs WHERE Email = ?";
             ps = con.prepareStatement(sql);
-            ps.setString(1, email);
+            ps.setString(1, connectedUserEmail);
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                userType = rs.getString("Type_utilisateur");
+                userInfos = new String[4];
+                userInfos[0] = rs.getString("Type_utilisateur");
+                userInfos[1] = String.valueOf(rs.getInt("ID_utilisateur"));
+                userInfos[2] = rs.getString("Nom");
+                userInfos[3] = rs.getString("Prenom");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -169,6 +178,37 @@ public class UserDAOImpl implements UserDAO {
             if (ps != null) ps.close();
             if (con != null) con.close();
         }
-        return userType;
+        return userInfos;
     }
+
+    public String[] getUserInfos(String email) throws SQLException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String[] userInfos = null;
+
+        try {
+            con = getConnection();
+            String sql = "SELECT * FROM utilisateurs WHERE Email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                userInfos = new String[4];
+                userInfos[0] = rs.getString("Type_utilisateur");
+                userInfos[1] = String.valueOf(rs.getInt("ID_utilisateur"));
+                userInfos[2] = rs.getString("Nom");
+                userInfos[3] = rs.getString("Prenom");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+            if (con != null) con.close();
+        }
+        return userInfos;
+    }
+
 }

@@ -40,7 +40,7 @@
                               <VBox fx:id="vBox_messages11" prefHeight="1000.0" prefWidth="600.0" />
                            </content>
                         </ScrollPane>
-                        <Button fx:id="button_send11" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="98.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Envoyer" textFill="ORANGE" AnchorPane.topAnchor="455.0" />
+                        <Button onAction="#sendMessage" fx:id="button_send11" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="98.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Envoyer" textFill="ORANGE" AnchorPane.topAnchor="455.0" />
                         <TextField fx:id="tf_message11" layoutX="68.0" layoutY="468.0" prefHeight="45.0" prefWidth="512.0" style="-fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" AnchorPane.topAnchor="455.0" />
                      </children>
                   </AnchorPane>
@@ -56,37 +56,37 @@
                               </Label>
                               <AnchorPane fx:id="student_menu1" layoutX="14.0" layoutY="44.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
                                  <children>
-                                    <Button fx:id="student_lundiBtn1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Lundi" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                    <Button fx:id="student_lundiBtn1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Lundi" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="student_merdiBtn1" layoutX="111.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mardi" textFill="ORANGE">
+                                    <Button fx:id="student_merdiBtn1" layoutX="111.0" layoutY="11.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mardi" textFill="ORANGE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="student_mercrediBtn1" layoutX="211.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mercredi" textFill="ORANGE">
+                                    <Button fx:id="student_mercrediBtn1" layoutX="211.0" layoutY="11.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mercredi" textFill="ORANGE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="student_jeudiBtn1" layoutX="311.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Jeudi" textFill="ORANGE">
+                                    <Button fx:id="student_jeudiBtn1" layoutX="311.0" layoutY="11.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Jeudi" textFill="ORANGE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="student_vendrediBtn1" layoutX="411.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Vendredi" textFill="ORANGE">
+                                    <Button fx:id="student_vendrediBtn1" layoutX="411.0" layoutY="11.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Vendredi" textFill="ORANGE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="student_samediBtn1" layoutX="511.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Samedi" textFill="ORANGE">
+                                    <Button fx:id="student_samediBtn1" layoutX="511.0" layoutY="11.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Samedi" textFill="ORANGE">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="student_dimancheBtn1" layoutX="611.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Dimanche" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                    <Button fx:id="student_dimancheBtn1" layoutX="611.0" layoutY="11.0" mnemonicParsing="false" onAction="#getEmployeMenu" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Dimanche" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -516,7 +516,12 @@
                               <Font size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="student_communicationBtn1" layoutX="12.0" layoutY="125.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication " textFill="ORANGE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+                        <Button fx:id="student_communicationBtn1" layoutX="12.0" layoutY="125.0" mnemonicParsing="false" onAction="#getMenuRepas" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication " textFill="ORANGE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="student_deconnecte1" layoutX="23.0" layoutY="135.0" mnemonicParsing="false" onAction="#signOut" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Se déconnecter" textFill="ORANGE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="180.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -536,7 +541,7 @@
                               <VBox fx:id="vBox_messages1" prefHeight="1000.0" prefWidth="600.0" />
                            </content>
                         </ScrollPane>
-                        <Button fx:id="button_send1" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="98.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Envoyer" textFill="ORANGE" AnchorPane.topAnchor="455.0" />
+                        <Button onAction="#sendMessage" fx:id="button_send1" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="98.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Envoyer" textFill="ORANGE" AnchorPane.topAnchor="455.0" />
                         <TextField fx:id="tf_message1" layoutX="68.0" layoutY="468.0" prefHeight="45.0" prefWidth="512.0" style="-fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" AnchorPane.topAnchor="455.0" />
                      </children>
                   </AnchorPane>
@@ -552,37 +557,37 @@
                                         </Label>
                                         <AnchorPane fx:id="student_menu" layoutX="14.0" layoutY="44.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
                                             <children>
-                                                <Button fx:id="student_lundiBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Lundi" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                <Button fx:id="student_lundiBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Lundi" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="student_merdiBtn" layoutX="111.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mardi" textFill="ORANGE">
+                                                <Button fx:id="student_merdiBtn" layoutX="111.0" layoutY="11.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mardi" textFill="ORANGE">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="student_mercrediBtn" layoutX="211.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mercredi" textFill="ORANGE">
+                                                <Button fx:id="student_mercrediBtn" layoutX="211.0" layoutY="11.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Mercredi" textFill="ORANGE">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="student_jeudiBtn" layoutX="311.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Jeudi" textFill="ORANGE">
+                                                <Button fx:id="student_jeudiBtn" layoutX="311.0" layoutY="11.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Jeudi" textFill="ORANGE">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="student_vendrediBtn" layoutX="411.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Vendredi" textFill="ORANGE">
+                                                <Button fx:id="student_vendrediBtn" layoutX="411.0" layoutY="11.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Vendredi" textFill="ORANGE">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="student_samediBtn" layoutX="511.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Samedi" textFill="ORANGE">
+                                                <Button fx:id="student_samediBtn" layoutX="511.0" layoutY="11.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Samedi" textFill="ORANGE">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="student_dimancheBtn" layoutX="611.0" layoutY="11.0" mnemonicParsing="false" onAction="#getModifyValideteMenu" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Dimanche" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
+                                                <Button fx:id="student_dimancheBtn" layoutX="611.0" layoutY="11.0" mnemonicParsing="false" onAction="#getStudentMenu" prefHeight="60.0" prefWidth="107.0" style="-fx-background-color: white; -fx-border-color: orange; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Dimanche" textFill="ORANGE" AnchorPane.rightAnchor="10.0">
                                                     <font>
                                                         <Font size="16.0" />
                                                     </font>
@@ -1010,11 +1015,16 @@
                                         <Font size="16.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="student_communicationBtn" layoutX="12.0" layoutY="125.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication " textFill="ORANGE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+                                <Button fx:id="student_communicationBtn" layoutX="12.0" layoutY="125.0" mnemonicParsing="false" onAction="#getMenuRepas" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication " textFill="ORANGE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="135.0">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Button>
+                        <Button fx:id="student_deconnecte" layoutX="23.0" layoutY="135.0" mnemonicParsing="false" onAction="#signOut" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Se déconnecter" textFill="ORANGE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="180.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
                             </children>
                         </AnchorPane>
 
@@ -1030,7 +1040,7 @@
                                         <VBox fx:id="vBox_messages" prefHeight="1000.0" prefWidth="600.0" />
                                     </content>
                                 </ScrollPane>
-                                <Button fx:id="button_send" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="98.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Envoyer" textFill="ORANGE" AnchorPane.topAnchor="455.0" />
+                                <Button onAction="#sendMessage" fx:id="button_send" layoutX="586.0" layoutY="469.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="98.0" style="-fx-background-radius: 5px; -fx-border-color: orange; -fx-border-radius: 5px;" text="Envoyer" textFill="ORANGE" AnchorPane.topAnchor="455.0" />
                                 <TextField fx:id="tf_message" layoutX="68.0" layoutY="468.0" prefHeight="45.0" prefWidth="512.0" style="-fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" AnchorPane.topAnchor="455.0" />
                             </children>
                         </AnchorPane>
@@ -1859,8 +1869,9 @@
                                         <Font size="16.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="chef_communicationBtn" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication avec le Responsable" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                <Button onAction="#getMenuRepas" fx:id="chef_communicationBtn" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Communication avec le Responsable" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="230.0">
                                 </Button>
+                        <Button onAction="#signOut" fx:id="chef_deconnecte" layoutX="21.0" layoutY="240.0" mnemonicParsing="false" prefHeight="40.0" style="-fx-background-color: black; -fx-background-radius: 8px; -fx-border-color: orange; -fx-border-radius: 8px;" text="Se déconnecter" textFill="ORANGE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="275.0" />
                             </children>
                         </AnchorPane>
                         <AnchorPane fx:id="service_side" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="60.0">

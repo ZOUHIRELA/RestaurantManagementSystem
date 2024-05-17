@@ -261,19 +261,20 @@ public class EmployeeDAOImpl {
                 LocalDate dateEmbauche = selectedItem.getDateEmbauche();
                 int idEmploye = selectedItem.getIdEmploye();
 
-                // Création de l'alerte avec deux boutons (OK et Annuler)
+
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation de modification");
                 alert.setHeaderText("Vous voulez vraiment modifier cet employé ?");
                 alert.setContentText("Choisissez OK pour confirmer ou Annuler pour annuler.");
 
-                // Personnalisation des boutons de l'alerte
+
                 ButtonType buttonTypeOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
                 ButtonType buttonTypeCancel = new ButtonType("Annuler", ButtonBar.ButtonData.CANCEL_CLOSE);
                 alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);
 
-                // Affichage de l'alerte et traitement du choix de l'utilisateur
+
                 Optional<ButtonType> result = alert.showAndWait();
+
                 if (result.isPresent() && result.get() == buttonTypeOK) {
                     UserDAOImpl userDAO = new UserDAOImpl();
                     Connection con = userDAO.getConnection();
@@ -309,13 +310,13 @@ public class EmployeeDAOImpl {
 
                 int idEmploye = selectedItem.getIdEmploye();
 
-                // Création de l'alerte avec deux boutons (OK et Annuler)
+
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation de suppression");
                 alert.setHeaderText("Vous voulez vraiment supprimer cet employé ?");
                 alert.setContentText("Choisissez OK pour confirmer ou Annuler pour annuler.");
 
-                // Personnalisation des boutons de l'alerte
+
                 ButtonType buttonTypeOK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
                 ButtonType buttonTypeCancel = new ButtonType("Annuler", ButtonBar.ButtonData.CANCEL_CLOSE);
                 alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);

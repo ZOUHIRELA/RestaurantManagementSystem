@@ -53,7 +53,7 @@ public class ChefDAOImpl implements ChefDAO {
         ps.setString(2, entreeTextArea.getText());
         ps.setString(3, dessertTextArea.getText());
         ps.setString(4, descriptionTextArea.getText());
-        ps.setString(5, disponibiliteCheckBox.isSelected() ? "Oui" : "Non"); // Supposons que la disponibilité est enregistrée sous forme de chaîne
+        ps.setString(5, disponibiliteCheckBox.isSelected() ? "Oui" : "Non");
         ps.setString(6, jour);
         ps.setString(7, typeRepas);
 
